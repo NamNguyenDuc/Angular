@@ -1,0 +1,11 @@
+<h1
+  [class.with-border]="withBorder"
+  [style.color]="textColor"
+  (mouseover)="onTextMouseOver()"
+  (mouseout)="onTextMouseOut()"
+>
+  {{title}}
+  <app-hello [text]="title" (buttonClicked)="onButtonClickedFromHello($event)"></app-hello>
+  <app-hi></app-hi>
+</h1>
+<button (click)="onButtonClick()">{{withBorder ? 'Hider' : 'Show'}} border</button>
