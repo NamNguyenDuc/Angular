@@ -4,8 +4,25 @@
   (mouseover)="onTextMouseOver()"
   (mouseout)="onTextMouseOut()"
 >
-  {{title}}
-  <app-hello [text]="title" (buttonClicked)="onButtonClickedFromHello($event)"></app-hello>
+  {{ title }}
+  <app-hello
+    [text]="title"
+    (buttonClicked)="onButtonClickedFromHello($event)"
+  ></app-hello>
   <app-hi></app-hi>
 </h1>
-<button (click)="onButtonClick()">{{withBorder ? 'Hider' : 'Show'}} border</button>
+<button (click)="onButtonClick()">
+  {{ withBorder ? "Hider" : "Show" }} border
+</button>
+
+<ck-editor
+  name="editor1"
+  [(ngModel)]="editorValue"
+  skin="moono-lisa"
+  language="en"
+  [fullPage]="true"
+></ck-editor>
+
+<p>text export ckeditor</p>
+
+{{ editorValue }}
